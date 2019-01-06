@@ -4,10 +4,19 @@ fastjson 代替 spring-boot 默认的 jackson 解析 json
 
 ## 使用
 
-```xml
-<dependency>
-    <groupId>cn.wangcaitao</groupId>
-    <artifactId>wangcaitao-starter-fastjson</artifactId>
-    <versiion>${last.version}</version>
-</dependency>
-```
+1. 引入依赖
+    ```xml
+    <dependency>
+        <groupId>cn.wangcaitao</groupId>
+        <artifactId>wangcaitao-starter-fastjson</artifactId>
+        <versiion>3.0.0</version>
+    </dependency>
+    ```
+
+1. 配置
+    ```yaml
+    fastjson:
+      serializer-features:
+        - prettyformat
+        - writedateusedateformat
+    ```
