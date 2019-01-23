@@ -13,6 +13,33 @@
     <artifactId>wangcaitao-starter-fastjson</artifactId>
     <version>3.0.0</version>
 
+    <name>wangcaitao-starter-fastjson</name>
+    <description>wangcaitao-starter-fastjson</description>
+    <url>https://github.com/wangcaitao/wangcaitao-starter-fastjson</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>wangcaitao</name>
+            <email>wangcaitao@aliyun.com</email>
+            <url>http://wangcaitao.cn</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/wangcaitao/wangcaitao-starter-fastjson</url>
+        <connection>scm:git:https://github.com/wangcaitao/wangcaitao-starter-fastjson.git</connection>
+        <developerConnection>scm:git:https://github.com/wangcaitao/wangcaitao-starter-fastjson.git</developerConnection>
+        <tag>3.0.0</tag>
+    </scm>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -53,4 +80,63 @@
         </dependency>
         <!-- others end -->
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.0.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>oss-sonatype</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>oss-sonatype</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>
