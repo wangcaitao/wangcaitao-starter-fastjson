@@ -1,4 +1,4 @@
-package cn.wangcaitao.starter.fastjson;
+package com.wangcaitao.starter.fastjson;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import lombok.Data;
