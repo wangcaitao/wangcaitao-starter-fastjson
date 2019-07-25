@@ -7,9 +7,9 @@ fastjson 代替 spring-boot 默认的 jackson 解析 json
 1. 引入依赖
     ```xml
     <dependency>
-        <groupId>cn.wangcaitao</groupId>
+        <groupId>com.wangcaitao</groupId>
         <artifactId>wangcaitao-starter-fastjson</artifactId>
-        <versiion>3.1.1</version>
+        <versiion>4.0.0</version>
     </dependency>
     ```
 
