@@ -15,7 +15,7 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.annotation.Resource;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +43,7 @@ public class FastJsonAutoConfiguration implements WebMvcConfigurer {
 
     @Bean
     public StringHttpMessageConverter stringHttpMessageConverter() {
-        return new StringHttpMessageConverter(Charset.forName("UTF-8"));
+        return new StringHttpMessageConverter(StandardCharsets.UTF_8);
     }
 
     @Override
